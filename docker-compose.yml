@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  postgis:
+    container_name: postgis
+    build: ./postgis
+    volumes:
+      - postgis_data:/var/lib/postgis/data
+      - ./postgis/sql:/docker-entrypoint-initdb.d
+    env_file: .env
+    ports:
+      - 5433:5432
+
+volumes:
+  postgis_data:
