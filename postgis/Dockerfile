@@ -1,1 +1,3 @@
-FROM postgis/postgis:11-2.5-alpine
+FROM postgis/postgis:13-master
+
+WORKDIR /home
